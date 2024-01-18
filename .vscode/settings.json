@@ -1,0 +1,7 @@
+{
+    "workbench.preferredDarkColorTheme": "Dark Powershell Theme",
+    "workbench.preferredLightColorTheme": "PowerShell ISE",
+    "powershell.scriptAnalysis.settingsPath": ".vscode/PSScriptAnalyzerSettings.psd1",
+    "azureAutomation.directory.basePath": "${fileWorkspaceFolder}/Runbooks",
+    "powershell.cwd": "Runbooks"
+}

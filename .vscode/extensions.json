@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "ms-vscode.powershell",
+        "martinfliegner.dark-powershell-theme",
+        "azure-automation.vscode-azureautomation",
+        "ms-azuretools.vscode-azureresourcegroups",
+        "ms-azuretools.vscode-azurestorage",
+        "github.vscode-pull-request-github",
+        "github.codespaces",
+        "github.vscode-github-actions",
+        "me-dutour-mathieu.vscode-github-actions",
+        "davidanson.vscode-markdownlint",
+        "ms-vscode.vscode-github-issue-notebooks"
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Update-AzAutoFWProject",
+            "detail": "Invoke Azure Automation Framework setup script",
+            "type": "shell",
+            "command": "command -v pwsh >/dev/null 2>&1 || { echo 'PowerShell (pwsh) could not be found. Please install PowerShell or check your PATH.'; exit 1; }; pwsh -ExecutionPolicy Bypass -NoLogo -NonInteractive -File setup/AzAutoFWProject/Update-AzAutoFWProject.ps1",
+            "windows": {
+                "command": "where pwsh.exe >nul 2>&1 && (pwsh.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -File ./setup/AzAutoFWProject/Update-AzAutoFWProject.ps1) || where powershell.exe >nul 2>&1 && (powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -File ./setup/AzAutoFWProject/Update-AzAutoFWProject.ps1) || echo 'Neither PowerShell Core (pwsh.exe) nor Windows PowerShell (powershell.exe) could be found. Please install PowerShell or check your PATH.'"
+            },
+            "problemMatcher": {
+                "owner": "Update-AzAutoFWProject.ps1",
+                "fileLocation": "autoDetect",
+                "pattern": {
+                    "regexp": "^(WARNING|ERROR):\\s*(.*)$",
+                    "severity": 1,
+                    "message": 2
+                }
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "icon": {
+                "id": "terminal-powershell"
+            }
+        }
+    ]
+}

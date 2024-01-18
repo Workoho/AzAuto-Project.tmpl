@@ -1,0 +1,24 @@
+{
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "../AzAuto-Common-Runbook-FW"
+        },
+        {
+            "path": "../AzAuto-Project.tmpl"
+        }
+    ],
+    "settings": {
+        "workbench.preferredDarkColorTheme": "Dark Powershell Theme",
+        "workbench.preferredLightColorTheme": "PowerShell ISE",
+        "powershell.scriptAnalysis.settingsPath": ".vscode/PSScriptAnalyzerSettings.psd1",
+        "azureAutomation.directory.basePath": "${workspaceFolder}/Runbooks",
+        "powershell.cwd": "Runbooks",
+        "search.exclude": {
+            "**/AzAuto-Common-Runbook-FW": true,
+            "**/AzAuto-Project.tmpl": true
+        }
+    }
+}
