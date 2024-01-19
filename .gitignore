@@ -1,8 +1,11 @@
 # Ignore common runbooks from https://github.com/Workoho/AzAuto-Common-Runbook-FW/tree/main/Runbooks
 Runbooks/Common_*
 
-# Created by https://www.toptal.com/developers/gitignore/api/linux,macos,windows,powershell,visualstudiocode,git
-# Edit at https://www.toptal.com/developers/gitignore?templates=linux,macos,windows,powershell,visualstudiocode,git
+# Created by https://www.toptal.com/developers/gitignore/api/git,linux,macos,windows,visualstudiocode,dotenv
+# Edit at https://www.toptal.com/developers/gitignore?templates=git,linux,macos,windows,visualstudiocode,dotenv
+
+### dotenv ###
+.env
 
 ### Git ###
 # Created by git for backups. To disable backups in Git:
@@ -43,6 +46,7 @@ Runbooks/Common_*
 # Icon must end with two \r
 Icon
 
+
 # Thumbnails
 ._*
 
@@ -66,22 +70,13 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
-### PowerShell ###
-# Exclude packaged modules
-*.zip
-
-# Exclude .NET assemblies from source
-*.dll
-
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
-!.vscode/keybindings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
-!.vscode/*.psd1
 
 # Local History for Visual Studio Code
 .history/
@@ -120,4 +115,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/linux,macos,windows,powershell,visualstudiocode,git
+# End of https://www.toptal.com/developers/gitignore/api/git,linux,macos,windows,visualstudiocode,dotenv
