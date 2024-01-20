@@ -1,6 +1,5 @@
 {
 	"name": "AzAuto-Project",
-	// "image": "mcr.microsoft.com/microsoftgraph/powershell:latest",
 	"build": {
         // Path is relataive to the devcontainer.json file.
         "dockerfile": "Dockerfile"
