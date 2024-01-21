@@ -53,9 +53,8 @@ $projectDir = (Get-Item $PSScriptRoot).Parent.Parent.FullName
 $configDir = Join-Path $projectDir 'config' 'AzAutoFWProject'
 $configName = 'AzAutoFWProject.psd1'
 $config = $null
-$configScriptPath = Join-Path $configDir 'Get-AzAutoFWConfig.ps1'
+$configScriptPath = Join-Path $projectDir 'setup' 'AzAutoFWProject' 'Get-AzAutoFWConfig.ps1'
 if ((Test-Path $configScriptPath) -and (Test-Path (Resolve-Path $configScriptPath) -PathType Leaf)) {
-    # Use the parent configuration script if its symlink exists.
     if ($commonBoundParameters) {
         $config = & $configScriptPath -ConfigDir $configDir -ConfigName $configName @commonBoundParameters
     }
