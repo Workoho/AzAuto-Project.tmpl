@@ -39,7 +39,9 @@
 #>
 
 [CmdletBinding()]
-param()
+param(
+    [switch]$VsCodeTask
+)
 
 Write-Verbose "---START of $((Get-Item $PSCommandPath).Name), $((Test-ScriptFileInfo $PSCommandPath | Select-Object -Property Version, Guid | & { process{$_.PSObject.Properties | & { process{$_.Name + ': ' + $_.Value} }} }) -join ', ') ---"
 
@@ -52,7 +54,7 @@ $configDir = Join-Path $projectDir 'config' 'AzAutoFWProject'
 $configName = 'AzAutoFWProject.psd1'
 $config = $null
 $configScriptPath = Join-Path $configDir 'Get-AzAutoFWConfig.ps1'
-if (    (Test-Path $configScriptPath) -and (Test-Path (Resolve-Path $configScriptPath) -PathType Leaf)) {
+if ((Test-Path $configScriptPath) -and (Test-Path (Resolve-Path $configScriptPath) -PathType Leaf)) {
     # Use the parent configuration script if its symlink exists.
     if ($commonBoundParameters) {
         $config = & $configScriptPath -ConfigDir $configDir -ConfigName $configName @commonBoundParameters
@@ -64,23 +66,30 @@ if (    (Test-Path $configScriptPath) -and (Test-Path (Resolve-Path $configScrip
 else {
     # This will only run when the project is not yet configured.
     $configPath = Join-Path $configDir $configName
-    $config = Import-PowerShellDataFile -Path $configPath -ErrorAction Stop | & {
-        process {
-            $_.Keys | Where-Object { $_ -notin ('ModuleVersion', 'Author', 'Description', 'PrivateData') } | & {
-                process {
-                    $_.Remove($_)
+    $config = $null
+    try {
+        $config = Import-PowerShellDataFile -Path $configPath -ErrorAction Stop | & {
+            process {
+                $_.Keys | Where-Object { $_ -notin ('ModuleVersion', 'Author', 'Description', 'PrivateData') } | & {
+                    process {
+                        $_.Remove($_)
+                    }
                 }
-            }
-            $_.PrivateData.Remove('PSData')
-            $local:configData = $_
-            $_.PrivateData.GetEnumerator() | & {
-                process {
-                    $configData.Add($_.Key, $_.Value)
+                $_.PrivateData.Remove('PSData')
+                $local:configData = $_
+                $_.PrivateData.GetEnumerator() | & {
+                    process {
+                        $configData.Add($_.Key, $_.Value)
+                    }
                 }
+                $_.Remove('PrivateData')
+                $_    
             }
-            $_.Remove('PrivateData')
-            $_    
-        }
+        }    
+    }
+    catch {
+        Write-Error "Failed to read configuration file ${configPath}: $_" -ErrorAction Stop
+        exit
     }
     $config.Project = @{ Directory = $projectDir }
     $config.Config = @{ Directory = $configDir; Name = $configName; Path = $configPath }
@@ -120,10 +129,10 @@ try {
         process {
             if (Test-Path $_ -PathType Leaf) {
                 if ($commonBoundParameters) {
-                    & $_ -ChildConfig $config @commonBoundParameters
+                    & $_ -ChildConfig $config -VsCodeTask:$VsCodeTask @commonBoundParameters
                 }
                 else {
-                    & $_ -ChildConfig $config
+                    & $_ -ChildConfig $config -VsCodeTask:$VsCodeTask
                 }
             }
             else {

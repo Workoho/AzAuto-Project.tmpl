@@ -13,11 +13,16 @@
         # GitRepositoryUrl must be a valid Git repository URL. You likely don't want to change this unless you're forking the framework.
         GitRepositoryUrl       = 'https://github.com/Workoho/AzAuto-Common-Runbook-FW.git'
 
-        # Common runbooks may be copied instead of using symbolic links. This is useful if you can't use symbolic links for some reason.
-        # For example, on Windows, you may need to enable Developer Mode first, or run PowerShell as an administrator.
+        # Files belonging to the framework are usually symlinked to the child project to keep them up to date.
+        # On Windows, this requires Developer Mode to be enabled, or manually running the Update-AzAutoFWProjectRunbooks.ps1 script as an administrator.
+        # If you can't use symbolic links for some reason, you can set this to $false and the files will be copied and updated instead.
+        UseSymlink            = $true
+
+        # In rare cases, common runbooks may be copied instead of using symbolic links.
+        # If you set $UseSymlink to $false, this setting will be ignored.
         CopyRunbooks           = $false
 
-        # If you enabled CopyRunbooks, they are automatically updated when you run the Update-AzAutoFWProjectRunbooks.ps1 script.
+        # If you enabled CopyRunbooks, or disabled UseSymlink, common runbooks are automatically updated when the Update-AzAutoFWProjectRunbooks.ps1 script is run.
         # In case you want to update them manually, you can set this to $true. That way, you may keep changes you made to the runbooks.
         # Please note that you will need to manually keep track of updates to the common runbooks and apply them yourself.
         # We recommend that you instead write your own runbooks that call the common runbooks, so that you can update the common runbooks
