@@ -1,5 +1,9 @@
-# Ignore common runbooks from https://github.com/Workoho/AzAuto-Common-Runbook-FW/tree/main/Runbooks
+# Azure Automation Common Runbook Framework
+# https://github.com/Workoho/AzAuto-Common-Runbook-FW
+setup/AzAutoFWProject/*
+!setup/AzAutoFWProject/Update-AzAutoFWProject.ps1
 Runbooks/Common_*
+
 
 # Created by https://www.toptal.com/developers/gitignore/api/git,linux,macos,windows,visualstudiocode,dotenv
 # Edit at https://www.toptal.com/developers/gitignore?templates=git,linux,macos,windows,visualstudiocode,dotenv
