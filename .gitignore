@@ -81,6 +81,8 @@ Temporary Items
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+!.vscode/PSScriptAnalyzerSettings.psd1
+!.vscode/PSScriptAnalyzerCustomRules.ps1
 
 # Local History for Visual Studio Code
 .history/
