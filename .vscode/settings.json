@@ -3,5 +3,6 @@
     "workbench.preferredLightColorTheme": "PowerShell ISE",
     "powershell.scriptAnalysis.settingsPath": ".vscode/PSScriptAnalyzerSettings.psd1",
     "azureAutomation.directory.basePath": "${fileWorkspaceFolder}/Runbooks",
+    "remote.containers.showReloadPrompt": false,
     "powershell.cwd": "Runbooks"
 }
