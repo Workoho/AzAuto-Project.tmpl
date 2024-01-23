@@ -54,7 +54,13 @@ $configDir = Join-Path $projectDir 'config' 'AzAutoFWProject'
 $configName = 'AzAutoFWProject.psd1'
 $config = $null
 $configScriptPath = Join-Path $projectDir 'setup' 'AzAutoFWProject' 'Get-AzAutoFWConfig.ps1'
-if ((Test-Path $configScriptPath) -and (Test-Path (Resolve-Path $configScriptPath) -PathType Leaf)) {
+if (
+    (Test-Path $configScriptPath -PathType Leaf) -and
+    (
+        ((Get-Item $configScriptPath).LinkType -ne "SymbolicLink") -or
+        (Test-Path -Path (Get-Item -Path $configScriptPath | Select-Object -ExpandProperty Target) -PathType Leaf)
+    )
+) {
     if ($commonBoundParameters) {
         $config = & $configScriptPath -ConfigDir $configDir -ConfigName $configName @commonBoundParameters
     }
