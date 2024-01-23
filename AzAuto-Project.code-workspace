@@ -5,9 +5,6 @@
         },
         {
             "path": "../AzAuto-Common-Runbook-FW"
-        },
-        {
-            "path": "../AzAuto-Project.tmpl"
         }
     ],
     "settings": {
