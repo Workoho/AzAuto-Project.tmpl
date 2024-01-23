@@ -43,7 +43,7 @@
             # List the targeted versions of PowerShell here
             TargetVersions = @(
                 '5.1'
-                '7.2'
+                # '7.2' # Runbooks must work with PS 5.1
             )
         }
     }
