@@ -112,7 +112,7 @@ if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
 }
 
 $AzAutoFWDir = Join-Path (Get-Item $PSScriptRoot).Parent.Parent.Parent.FullName (
-    Split-Path (Split-Path $config.GitRepositoryUrl -Leaf) -LeafBase
+    [IO.Path]::GetFileNameWithoutExtension((Split-Path $config.GitRepositoryUrl -Leaf))
 ).TrimEnd('.git')
 
 if (-Not (Test-Path (Join-Path $AzAutoFWDir '.git') -PathType Container)) {
