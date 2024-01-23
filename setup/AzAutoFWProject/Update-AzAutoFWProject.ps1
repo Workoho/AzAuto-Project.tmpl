@@ -50,10 +50,10 @@ $commonBoundParameters = $PSBoundParameters.Keys | Where-Object { $_ -in $common
 
 #region Read Project Configuration
 $projectDir = (Get-Item $PSScriptRoot).Parent.Parent.FullName
-$configDir = Join-Path $projectDir 'config' 'AzAutoFWProject'
+$configDir = Join-Path $projectDir (Join-Path 'config' 'AzAutoFWProject')
 $configName = 'AzAutoFWProject.psd1'
 $config = $null
-$configScriptPath = Join-Path $projectDir 'setup' 'AzAutoFWProject' 'Get-AzAutoFWConfig.ps1'
+$configScriptPath = Join-Path $projectDir (Join-Path 'setup' (Join-Path 'AzAutoFWProject' 'Get-AzAutoFWConfig.ps1'))
 if (
     (Test-Path $configScriptPath -PathType Leaf) -and
     (
@@ -130,7 +130,7 @@ if (-Not (Test-Path (Join-Path $AzAutoFWDir '.git') -PathType Container)) {
 
 #region Invoke sibling script from parent repository
 try {
-    Join-Path $AzAutoFWDir 'setup' 'AzAutoFWProject' (Split-Path $PSCommandPath -Leaf) | & {
+    Join-Path $AzAutoFWDir (Join-Path 'setup' (Join-Path 'AzAutoFWProject' (Split-Path $PSCommandPath -Leaf))) | & {
         process {
             if (Test-Path $_ -PathType Leaf) {
                 if ($commonBoundParameters) {
