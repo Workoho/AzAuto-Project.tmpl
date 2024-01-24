@@ -8,14 +8,13 @@
         }
     ],
     "settings": {
-        "workbench.preferredDarkColorTheme": "Dark Powershell Theme",
-        "workbench.preferredLightColorTheme": "PowerShell ISE",
+        "workbench.colorTheme": "Dark Powershell Theme",
         "powershell.scriptAnalysis.settingsPath": ".vscode/PSScriptAnalyzerSettings.psd1",
         "azureAutomation.directory.basePath": "${workspaceFolder}/Runbooks",
         "powershell.cwd": "Runbooks",
         "search.exclude": {
             "**/AzAuto-Common-Runbook-FW": true,
             "**/AzAuto-Project.tmpl": true
-        }
+        },
     }
 }
