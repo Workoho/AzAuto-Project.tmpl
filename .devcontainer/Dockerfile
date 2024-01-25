@@ -1,5 +1,7 @@
-FROM mcr.microsoft.com/powershell:latest
+ARG VARIANT="latest"
+FROM mcr.microsoft.com/powershell:${VARIANT}
 RUN pwsh \
+  -ExecutionPolicy Bypass \
   -NoLogo \
   -NoProfile \
   -NonInteractive \
