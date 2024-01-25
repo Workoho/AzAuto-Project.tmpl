@@ -117,7 +117,7 @@ $AzAutoFWDir = Join-Path (Get-Item $PSScriptRoot).Parent.Parent.Parent.FullName 
 
 if (-Not (Test-Path (Join-Path $AzAutoFWDir '.git') -PathType Container)) {
     try {
-        Write-Output "Cloning $config.GitRepositoryUrl to $AzAutoFWDir"
+        Write-Output "Cloning $($config.GitRepositoryUrl) to $AzAutoFWDir"
         $output = git clone --quiet $config.GitRepositoryUrl $AzAutoFWDir 2>&1
         if ($LASTEXITCODE -ne 0) { Throw "Failed to clone repository: $output" }
     }
