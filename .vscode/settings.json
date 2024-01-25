@@ -14,5 +14,6 @@
     "terminal.integrated.defaultProfile.windows": "PowerShell",
 
     // Azure Automation settings
-    "azureAutomation.directory.basePath": "./Runbooks"
+    "azureAutomation.directory.basePath": "./Runbooks",
+    "workbench.colorTheme": "PowerShell ISE"
 }

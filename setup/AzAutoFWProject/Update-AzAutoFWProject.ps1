@@ -50,11 +50,17 @@ $commonBoundParameters = $PSBoundParameters.Keys | Where-Object { $_ -in $common
 
 #region Read Project Configuration
 $projectDir = (Get-Item $PSScriptRoot).Parent.Parent.FullName
-$configDir = Join-Path $projectDir 'config' 'AzAutoFWProject'
+$configDir = Join-Path $projectDir (Join-Path 'config' 'AzAutoFWProject')
 $configName = 'AzAutoFWProject.psd1'
 $config = $null
-$configScriptPath = Join-Path $projectDir 'setup' 'AzAutoFWProject' 'Get-AzAutoFWConfig.ps1'
-if ((Test-Path $configScriptPath) -and (Test-Path (Resolve-Path $configScriptPath) -PathType Leaf)) {
+$configScriptPath = Join-Path $projectDir (Join-Path 'setup' (Join-Path 'AzAutoFWProject' 'Get-AzAutoFWConfig.ps1'))
+if (
+    (Test-Path $configScriptPath -PathType Leaf) -and
+    (
+        ((Get-Item $configScriptPath).LinkType -ne "SymbolicLink") -or
+        (Test-Path -Path (Get-Item -Path $configScriptPath | Select-Object -ExpandProperty Target) -PathType Leaf)
+    )
+) {
     if ($commonBoundParameters) {
         $config = & $configScriptPath -ConfigDir $configDir -ConfigName $configName @commonBoundParameters
     }
@@ -106,7 +112,7 @@ if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
 }
 
 $AzAutoFWDir = Join-Path (Get-Item $PSScriptRoot).Parent.Parent.Parent.FullName (
-    Split-Path (Split-Path $config.GitRepositoryUrl -Leaf) -LeafBase
+    [IO.Path]::GetFileNameWithoutExtension((Split-Path $config.GitRepositoryUrl -Leaf))
 ).TrimEnd('.git')
 
 if (-Not (Test-Path (Join-Path $AzAutoFWDir '.git') -PathType Container)) {
@@ -124,7 +130,7 @@ if (-Not (Test-Path (Join-Path $AzAutoFWDir '.git') -PathType Container)) {
 
 #region Invoke sibling script from parent repository
 try {
-    Join-Path $AzAutoFWDir 'setup' 'AzAutoFWProject' (Split-Path $PSCommandPath -Leaf) | & {
+    Join-Path $AzAutoFWDir (Join-Path 'setup' (Join-Path 'AzAutoFWProject' (Split-Path $PSCommandPath -Leaf))) | & {
         process {
             if (Test-Path $_ -PathType Leaf) {
                 if ($commonBoundParameters) {

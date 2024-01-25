@@ -31,6 +31,6 @@
         "search.exclude": {
             "**/AzAuto-Common-Runbook-FW": true,
             "**/AzAuto-Project.tmpl": true
-        },
+        }
     }
 }
