@@ -95,6 +95,7 @@ else {
 $null = $returnOutput.Add(
     "Hello $AddresseeList! If you can read this, this runbook is working as expected."
 )
+$null = $returnOutput.Add( (./Example_0000__Hello-World-Child-Runbook.ps1) )
 
 $return = @{
     Output      = $returnOutput

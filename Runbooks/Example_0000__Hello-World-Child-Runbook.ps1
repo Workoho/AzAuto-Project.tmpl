@@ -33,7 +33,7 @@ $StartupVariables = (Get-Variable | & { process { $_.Name } })      # Remember e
 
 #region This region could be your code -----------------------------------------
 # This variable will not be cleaned from memory after the script has finished
-$return = 'Hello world!'
+$return = 'Hello from our child runbook! 👶'
 
 $runtimeVariable = 'This variable WILL be cleaned from memory after the script has finished'
 Write-Verbose "runtimeVariable will be gone so I am telling you: $runtimeVariable"
