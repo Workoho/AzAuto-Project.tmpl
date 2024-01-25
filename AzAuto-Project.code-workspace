@@ -24,9 +24,6 @@
         "terminal.integrated.defaultProfile.osx": "pwsh",
         "terminal.integrated.defaultProfile.windows": "PowerShell",
 
-        // Azure Automation settings
-        "azureAutomation.directory.basePath": "./Runbooks",
-
         // Search settings
         "search.exclude": {
             "**/AzAuto-Common-Runbook-FW": true,

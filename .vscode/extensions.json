@@ -1,16 +1,29 @@
 {
     "recommendations": [
+        // Container development related extensions
+        "ms-vscode-remote.remote-containers",
+        "github.codespaces",
+
+        // PowerShell related extensions
         "ms-vscode.powershell",
         "martinfliegner.dark-powershell-theme",
+
+        // Additional PowerShell coding related extensions
+        "editorconfig.editorconfig",
+        "eamodio.gitlens",
+
+        // Azure related extensions
         "azure-automation.vscode-azureautomation",
         "ms-azuretools.vscode-azureresourcegroups",
         "ms-azuretools.vscode-azurestorage",
-        "github.vscode-pull-request-github",
-        "github.codespaces",
+
+        // GitHub related extensions
         "github.vscode-github-actions",
         "me-dutour-mathieu.vscode-github-actions",
-        "davidanson.vscode-markdownlint",
         "ms-vscode.vscode-github-issue-notebooks",
-        "ms-vscode-remote.remote-containers"
+        "github.vscode-pull-request-github",
+
+        // Markdown related extensions
+        "davidanson.vscode-markdownlint"
     ]
 }

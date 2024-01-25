@@ -28,15 +28,27 @@
 
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
+				// PowerShell related extensions
 				"ms-vscode.powershell",
-				"MartinFliegner.dark-powershell-theme",
+				"martinfliegner.dark-powershell-theme",
+
+				// Additional PowerShell coding related extensions
+				"editorconfig.editorconfig",
+				"eamodio.gitlens",
+
+				// Azure related extensions
 				"azure-automation.vscode-azureautomation",
 				"ms-azuretools.vscode-azureresourcegroups",
 				"ms-azuretools.vscode-azurestorage",
-				"GitHub.vscode-pull-request-github",
+
+				// GitHub related extensions
 				"github.vscode-github-actions",
 				"me-dutour-mathieu.vscode-github-actions",
-				"DavidAnson.vscode-markdownlint"
+				"ms-vscode.vscode-github-issue-notebooks",
+				"github.vscode-pull-request-github",
+
+				// Markdown related extensions
+				"davidanson.vscode-markdownlint"
 			]
 		}
 	}
