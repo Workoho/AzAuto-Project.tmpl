@@ -2,7 +2,8 @@
 	"name": "AzAuto-Project",
 	"build": {
         // Path is relataive to the devcontainer.json file.
-        "dockerfile": "Dockerfile"
+        "dockerfile": "Dockerfile",
+		"args": { "VARIANT": "latest" }  // Use "latest" for Windows and Linux
     },
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
@@ -22,9 +23,7 @@
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
 			"settings": { 
-				"terminal.integrated.defaultProfile.linux": "pwsh",
-				"workbench.preferredLightColorTheme": "PowerShell ISE",
-        		"workbench.preferredDarkColorTheme": "Dark Powershell Theme"
+				"terminal.integrated.defaultProfile.linux": "pwsh"
 			},
 
 			// Add the IDs of extensions you want installed when the container is created.
@@ -35,7 +34,6 @@
 				"ms-azuretools.vscode-azureresourcegroups",
 				"ms-azuretools.vscode-azurestorage",
 				"GitHub.vscode-pull-request-github",
-				"GitHub.codespaces",
 				"github.vscode-github-actions",
 				"me-dutour-mathieu.vscode-github-actions",
 				"DavidAnson.vscode-markdownlint"

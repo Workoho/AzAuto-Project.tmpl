@@ -13,14 +13,14 @@
                 "owner": "Update-AzAutoFWProject.ps1",
                 "fileLocation": "autoDetect",
                 "pattern": {
-                    "regexp": "^(WARNING|ERROR):\\s*(.*)$",
+                    "regexp": "^(WARNING|ERROR):\\s*([\\s\\S]*)$",
                     "severity": 1,
                     "message": 2
                 }
             },
             "presentation": {
                 "echo": true,
-                "reveal": "silent",
+                "reveal": "always",
                 "revealProblems": "onProblem",
                 "focus": false,
                 "panel": "dedicated",
