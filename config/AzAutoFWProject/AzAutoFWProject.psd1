@@ -16,7 +16,7 @@
         # Files belonging to the framework are usually symlinked to the child project to keep them up to date.
         # On Windows, this requires Developer Mode to be enabled, or manually running the Update-AzAutoFWProjectRunbooks.ps1 script as an administrator.
         # If you can't use symbolic links for some reason, you can set this to $false and the files will be copied and updated instead.
-        UseSymlink            = $true
+        UseSymlink             = $true
 
         # In rare cases, common runbooks may be copied instead of using symbolic links.
         # If you set $UseSymlink to $false, this setting will be ignored.

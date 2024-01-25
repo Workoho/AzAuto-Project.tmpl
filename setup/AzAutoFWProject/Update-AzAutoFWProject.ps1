@@ -65,7 +65,7 @@ if (
         $config = & $configScriptPath -ConfigDir $configDir -ConfigName $configName @commonBoundParameters
     }
     else {
-        $config = & $configScriptPath -ConfigDir $configDir -ConfigName $configName        
+        $config = & $configScriptPath -ConfigDir $configDir -ConfigName $configName
     }
 }
 else {
@@ -88,9 +88,9 @@ else {
                     }
                 }
                 $_.Remove('PrivateData')
-                $_    
+                $_
             }
-        }    
+        }
     }
     catch {
         Write-Error "Failed to read configuration file ${configPath}: $_" -ErrorAction Stop
