@@ -18,8 +18,6 @@
         "ms-azuretools.vscode-azurestorage",
 
         // GitHub related extensions
-        "github.vscode-github-actions",
-        "me-dutour-mathieu.vscode-github-actions",
         "ms-vscode.vscode-github-issue-notebooks",
         "github.vscode-pull-request-github",
 
