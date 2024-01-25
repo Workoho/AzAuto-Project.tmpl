@@ -11,7 +11,7 @@ function PSScriptAnalyzer_CustomRule_JoinPath {
             param($node)
 
             # Check for usage of Join-Path with more than two arguments
-            if ($node.CommandElements[0].Value -eq 'Join-Path' -and $node.CommandElements.Count -gt 3) {
+            if ($node.CommandElements[0].Value -eq 'Join-Path' -and $node.CommandElements.Count -gt 2) {
                 $violationMessage = "Join-Path in PowerShell 5.1 can only handle two paths."
                 $extent = $node.Extent
                 $diagnosticRecord = New-Object -TypeName Microsoft.Windows.PSScriptAnalyzer.Generic.DiagnosticRecord -ArgumentList $violationMessage, $extent, 'CustomRule', 'Warning', $null, $null
