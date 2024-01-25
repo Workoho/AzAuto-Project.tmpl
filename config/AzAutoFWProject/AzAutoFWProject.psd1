@@ -1,5 +1,5 @@
 @{
-    ModuleVersion = '1.0.0'
+    ModuleVersion = '1.0.0'     # This is the version of the framework you want to use. Only used if GitReference is set to 'ModuleVersion'.
     Author        = 'Azure Automation Common Runbook Framework'
     Description   = 'Main configuration file child project using the Azure Automation Common Runbook Framework.'
     PrivateData   = @{
@@ -15,14 +15,15 @@
 
         # Files belonging to the framework are usually symlinked to the child project to keep them up to date.
         # On Windows, this requires Developer Mode to be enabled, or manually running the Update-AzAutoFWProjectRunbooks.ps1 script as an administrator.
-        # If you can't use symbolic links for some reason, you can set this to $false and the files will be copied and updated instead.
-        UseSymlink             = $true
+        # If you would like to enforce using symlinks on Windows in any case, set this to $true.
+        EnforceSymlink             = $false
 
         # In rare cases, common runbooks may be copied instead of using symbolic links.
-        # If you set $UseSymlink to $false, this setting will be ignored.
+        # If you set $EnforceSymlink to $true but still would like to copy the runbooks, set this to $true.
         CopyRunbooks           = $false
 
-        # If you enabled CopyRunbooks, or disabled UseSymlink, common runbooks are automatically updated when the Update-AzAutoFWProjectRunbooks.ps1 script is run.
+        # If you enabled CopyRunbooks, or Windows is not enabled for symlinks, common runbooks are automatically updated when the
+        # Update-AzAutoFWProjectRunbooks.ps1 script is run.
         # In case you want to update them manually, you can set this to $true. That way, you may keep changes you made to the runbooks.
         # Please note that you will need to manually keep track of updates to the common runbooks and apply them yourself.
         # We recommend that you instead write your own runbooks that call the common runbooks, so that you can update the common runbooks
