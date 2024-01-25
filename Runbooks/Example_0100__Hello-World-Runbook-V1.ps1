@@ -40,8 +40,6 @@ Param(
     [boolean]$OutJson
 )
 
-Write-Verbose "---START of $((Get-Item $PSCommandPath).Name), $((Test-ScriptFileInfo $PSCommandPath | Select-Object -Property Version, Guid | & { process{$_.PSObject.Properties | & { process{$_.Name + ': ' + $_.Value} }} }) -join ', ') ---"
-
 #region This region could be your code -----------------------------------------
 
 $returnOutput = [System.Collections.ArrayList]::new()
