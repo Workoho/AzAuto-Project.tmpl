@@ -15,6 +15,13 @@ indent_style = space
 indent_size = 4
 trim_trailing_whitespace = true
 
+# Windows script and batch files
+[*.{cmd,bat}]
+end_of_line = crlf
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+
 # CSV, Markdown, and Text files
 [*.{csv,md,txt}]
 trim_trailing_whitespace = true
