@@ -5,8 +5,8 @@
 .COMPANYNAME Contoso
 .COPYRIGHT (c) 2024 Contoso Inc. All rights reserved.
 .TAGS
-.LICENSEURI https://github.com/Contoso/MyAzAuto-Project/LICENSE.txt
-.PROJECTURI https://github.com/Contoso/MyAzAuto-Project
+.LICENSEURI
+.PROJECTURI
 .ICONURI
 .EXTERNALMODULEDEPENDENCIES
 .REQUIREDSCRIPTS
