@@ -27,7 +27,7 @@ trim_trailing_whitespace = true
 trim_trailing_whitespace = true
 
 # JSON and XML files
-[*.{json,xml}]
+[*.{json,xml,code-workspace}]
 indent_style = space
 indent_size = 2
 
