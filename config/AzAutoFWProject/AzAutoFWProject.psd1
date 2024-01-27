@@ -14,7 +14,7 @@
         GitRepositoryUrl       = 'https://github.com/Workoho/AzAuto-Common-Runbook-FW.git'
 
         # Files belonging to the framework are usually symlinked to the child project to keep them up to date.
-        # On Windows, this requires Linked Connections to be enabled, or manually running the Update-AzAutoFWProjectRunbooks.ps1 script as an administrator.
+        # On Windows, this requires SeCreateSymbolicLinkPrivilege to be enabled, or manually running the Update-AzAutoFWProjectRunbooks.ps1 script as an administrator.
         # If you would like to enforce using symlinks on Windows in any case, set this to $true.
         EnforceSymlink         = $false
 
