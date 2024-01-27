@@ -1,4 +1,4 @@
 {
-    "key": "shift+cmd+[Backslash]",
-    "command": "workbench.action.toggleLightDarkThemes"
+  "key": "shift+cmd+[Backslash]",
+  "command": "workbench.action.toggleLightDarkThemes"
 }
