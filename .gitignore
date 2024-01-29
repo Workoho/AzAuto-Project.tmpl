@@ -4,6 +4,8 @@ setup/AzAutoFWProject/*
 scripts/AzAutoFWProject/*
 !scripts/AzAutoFWProject/Update-AzAutoFWProject.ps1
 Runbooks/Common_*
+*.local.psd1
+*.local.json
 
 # Created by https://www.toptal.com/developers/gitignore/api/git,linux,macos,windows,visualstudiocode,dotenv
 # Edit at https://www.toptal.com/developers/gitignore?templates=git,linux,macos,windows,visualstudiocode,dotenv
