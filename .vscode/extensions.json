@@ -23,7 +23,6 @@
     "martinfliegner.dark-powershell-theme",
 
     // Azure related extensions
-    "azure-automation.vscode-azureautomation",
     "ms-azuretools.vscode-azureresourcegroups",
     "ms-azuretools.vscode-azurestorage",
   ]

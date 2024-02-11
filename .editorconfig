@@ -6,7 +6,6 @@ root = true
 # Unix-style newlines with a newline ending every file
 [*]
 end_of_line = lf
-insert_final_newline = true
 
 # PowerShell files
 [*.{ps1,psd1,psm1,ps1xml,psc1,clixml}]

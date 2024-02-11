@@ -3,7 +3,7 @@
 .GUID b5e78940-5e2f-427d-87a1-c1630ed8c3da
 .AUTHOR Julian Pawlowski
 .COMPANYNAME Workoho GmbH
-.COPYRIGHT (c) 2024 Workoho GmbH. All rights reserved.
+.COPYRIGHT © 2024 Workoho GmbH
 .TAGS
 .LICENSEURI https://github.com/Workoho/AzAuto-Project.tmpl/LICENSE.txt
 .PROJECTURI https://github.com/Workoho/AzAuto-Project.tmpl
@@ -12,7 +12,8 @@
 .REQUIREDSCRIPTS
 .EXTERNALSCRIPTDEPENDENCIES
 .RELEASENOTES
-    2024-01-16 - Initial release.
+    Version 1.0.0 (2024-01-18)
+    - Initial release.
 #>
 
 <#
@@ -45,7 +46,7 @@ param(
 
 Write-Verbose "---START of $((Get-Item $PSCommandPath).Name), $((Test-ScriptFileInfo $PSCommandPath | Select-Object -Property Version, Guid | & { process{$_.PSObject.Properties | & { process{$_.Name + ': ' + $_.Value} }} }) -join ', ') ---"
 
-$commonParameters = 'Verbose', 'Debug', 'ErrorAction', 'WarningAction', 'InformationAction', 'ErrorVariable', 'WarningVariable', 'InformationVariable', 'OutVariable', 'OutBuffer', 'PipelineVariable'
+$commonParameters = 'Verbose', 'Debug', 'ErrorAction', 'WarningAction', 'InformationAction', 'ErrorVariable', 'WarningVariable', 'InformationVariable', 'OutVariable', 'OutBuffer', 'PipelineVariable', 'WhatIf'
 $commonBoundParameters = $PSBoundParameters.Keys | Where-Object { $_ -in $commonParameters } | ForEach-Object { @{ $_ = $PSBoundParameters[$_] } }
 
 #region Read Project Configuration
@@ -58,9 +59,18 @@ if (
     (Test-Path $configScriptPath -PathType Leaf) -and
     (
         ((Get-Item $configScriptPath).LinkType -ne "SymbolicLink") -or
-        (Test-Path -Path (Get-Item -Path $configScriptPath | Select-Object -ExpandProperty Target) -PathType Leaf)
+        (
+            Test-Path -LiteralPath (
+                Resolve-Path -Path (
+                    Join-Path -Path (Split-Path $configScriptPath) -ChildPath (
+                        Get-Item -LiteralPath $configScriptPath | Select-Object -ExpandProperty Target
+                    )
+                )
+            ) -PathType Leaf
+        )
     )
 ) {
+    Write-Verbose 'Found parent update script.'
     if ($commonBoundParameters) {
         $config = & $configScriptPath -ConfigDir $configDir -ConfigName $configName @commonBoundParameters
     }
@@ -70,6 +80,7 @@ if (
 }
 else {
     # This will only run when the project is not yet configured.
+    Write-Verbose 'Missing parent update script: Reading minimum configuration for project initialization.'
     $configPath = Join-Path $configDir $configName
     $config = $null
     try {
