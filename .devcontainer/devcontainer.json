@@ -1,10 +1,6 @@
 {
 	"name": "AzAuto-Project",
-	"build": {
-        // Path is relataive to the devcontainer.json file.
-        "dockerfile": "Dockerfile",
-		"args": { "VARIANT": "latest" }  // Use "latest" for Windows and Linux
-    },
+	"image": "ghcr.io/workoho/azauto-common-runbook-fw:latest",
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
 			"installZsh": "true",
