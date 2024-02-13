@@ -63,10 +63,10 @@ if (
             Test-Path -LiteralPath (
                 Resolve-Path -Path (
                     Join-Path -Path (Split-Path $configScriptPath) -ChildPath (
-                        Get-Item -LiteralPath $configScriptPath | Select-Object -ExpandProperty Target
+                        Get-Item -LiteralPath $configScriptPath -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Target
                     )
-                )
-            ) -PathType Leaf
+                ) -ErrorAction SilentlyContinue
+            ) -PathType Leaf -ErrorAction SilentlyContinue
         )
     )
 ) {
