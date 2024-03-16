@@ -9,17 +9,21 @@
         # 3. 'latest' (will go to the latest commit of the branch to give you the latest code, but may be unstable)
         # 4. A Git commit hash or branch name (if you know what you're doing and want to pin to a specific commit or branch)
         GitReference                 = 'ModuleVersion'
+        GitReference                 = 'ModuleVersion'
 
         # GitRepositoryUrl must be a valid Git repository URL. You likely don't want to change this unless you're forking the framework.
+        GitRepositoryUrl             = 'https://github.com/Workoho/AzAuto-Common-Runbook-FW.git'
         GitRepositoryUrl             = 'https://github.com/Workoho/AzAuto-Common-Runbook-FW.git'
 
         # Files belonging to the framework are usually symlinked to the child project to keep them up to date.
         # On Windows, this requires SeCreateSymbolicLinkPrivilege to be enabled, or manually running the Update-AzAutoFWProjectRunbooks.ps1 script as an administrator.
         # If you would like to enforce using symlinks on Windows in any case, set this to $true.
         EnforceSymlink               = $false
+        EnforceSymlink               = $false
 
         # In rare cases, common runbooks may be copied instead of using symbolic links.
         # If you set $EnforceSymlink to $true but still would like to copy the runbooks, set this to $true.
+        CopyRunbooks                 = $false
         CopyRunbooks                 = $false
 
         # If you enabled CopyRunbooks, or Windows is not enabled for symlinks, common runbooks are automatically updated when the
