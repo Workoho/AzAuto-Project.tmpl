@@ -5,14 +5,14 @@
 .COMPANYNAME Workoho GmbH
 .COPYRIGHT © 2024 Workoho GmbH
 .TAGS
-.LICENSEURI https://github.com/Workoho/AzAuto-Project.tmpl/LICENSE.txt
-.PROJECTURI https://github.com/Workoho/AzAuto-Project.tmpl
+.LICENSEURI https://github.com/workoho/AzAuto-Project.tmpl/LICENSE.txt
+.PROJECTURI https://github.com/workoho/AzAuto-Project.tmpl
 .ICONURI
 .EXTERNALMODULEDEPENDENCIES
 .REQUIREDSCRIPTS
 .EXTERNALSCRIPTDEPENDENCIES
 .RELEASENOTES
-    Version 1.0.0 (2024-02-25)
+    Version 1.0.0 (2024-03-17)
     - Initial release.
 #>
 
@@ -55,6 +55,17 @@ $configDir = Join-Path $projectDir (Join-Path 'config' 'AzAutoFWProject')
 $configName = 'AzAutoFWProject.psd1'
 $config = $null
 $configScriptPath = Join-Path $projectDir (Join-Path 'scripts' (Join-Path 'AzAutoFWProject' 'Get-AzAutoFWConfig.ps1'))
+
+Get-ChildItem -Path $configDir -File -Filter '*.template.*' -Recurse | & {
+    process {
+        $targetPath = $_.FullName -replace '\.template\.(.+)$', '.$1'
+        if (-not (Test-Path $targetPath)) {
+            Write-Verbose "Copying $_ to $targetPath"
+            Copy-Item -Path $_.FullName -Destination $targetPath -Force
+        }
+    }
+}
+
 if (
     (Test-Path $configScriptPath -PathType Leaf) -and
     (

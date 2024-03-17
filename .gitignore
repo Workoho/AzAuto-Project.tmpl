@@ -1,11 +1,12 @@
 # Azure Automation Common Runbook Framework
-# https://github.com/Workoho/AzAuto-Common-Runbook-FW
+# https://github.com/workoho/AzAuto-Common-Runbook-FW
 setup/AzAutoFWProject/*
 scripts/AzAutoFWProject/*
 !scripts/AzAutoFWProject/Update-AzAutoFWProject.ps1
 Runbooks/Common_*
-*.local.psd1
-*.local.json
+config/*.local.psd1
+!config/AzAutoFWProject/AzAutoFWProject.local.template.psd1
+config/*.local.json
 
 # Created by https://www.toptal.com/developers/gitignore/api/git,linux,macos,windows,visualstudiocode,dotenv
 # Edit at https://www.toptal.com/developers/gitignore?templates=git,linux,macos,windows,visualstudiocode,dotenv
