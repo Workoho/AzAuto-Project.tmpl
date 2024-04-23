@@ -7,8 +7,8 @@
         # Configure the Automation Account to be created or updated
         AutomationAccount  = @{
             # Can be any name you want, but must be unique within the Azure tenant.
-            # Following the naming convention <SubscriptionName>-<Region>-aaa001 is recommended.
-            Name              = 'prodsub-germanywestcentral-aaa001'
+            # Following the naming convention <SubscriptionName>-<Region>-aa001 is recommended.
+            Name              = 'prodsub-germanywestcentral-aa001'
 
             # The plan determines the pricing tier of the automation account.
             # 'Free' is limited to 500 minutes per month, 'Basic' is limited to 10,000 minutes per month.
@@ -24,7 +24,7 @@
             ResourceGroupName = 'prodsub-germanywestcentral-automation-rg'
 
             # The subscription ID and tenant ID can be found in the Azure portal.
-            Subscription      = '00000000-0000-0000-0000-000000000000'
+            SubscriptionId    = '00000000-0000-0000-0000-000000000000'
             TenantId          = '00000000-0000-0000-0000-000000000000'
 
             # Azure tags to be added to the automation account (once during creation only).
@@ -44,6 +44,12 @@
             #     Name  = 'AV_ProjectName_VariableName'
             #     Value = ''
             # }
+        )
+
+        # Configure Managed Identities for the Azure Automation Account.
+        ManagedIdentity    = @(
+            # You might move Managed Identity defintions from the public AzAutoFWProject.psd1
+            # to this local configuration file for improved security.
         )
     }
 }
