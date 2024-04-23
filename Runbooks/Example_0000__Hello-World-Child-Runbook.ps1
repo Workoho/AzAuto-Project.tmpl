@@ -1,5 +1,5 @@
 <#PSScriptInfo
-.VERSION 1.0.0-alpha.1
+.VERSION 1.0.0-alpha1
 .GUID 34d95689-6862-49f3-8f14-0c4a157e96ef
 .AUTHOR John Doe
 .COMPANYNAME Contoso
