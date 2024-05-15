@@ -1,5 +1,5 @@
 <#PSScriptInfo
-.VERSION 1.0.0-alpha1
+.VERSION 0.0.1
 .GUID 5ad354a5-496c-4785-980a-2523722d52e0
 .AUTHOR John Doe
 .COMPANYNAME Contoso
@@ -12,7 +12,7 @@
 .REQUIREDSCRIPTS
 .EXTERNALSCRIPTDEPENDENCIES
 .RELEASENOTES
-    Version 1.0.0-alpha1 (2024-01-18)
+    Version 0.0.1 (2024-01-18)
     - Initial release.
 #>
 
