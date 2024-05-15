@@ -35,8 +35,9 @@
         AutomationVariable           = @(
             # # EXAMPLE:
             # @{
-            #     Name  = 'AV_ProjectName_VariableName'
-            #     Value = [String]''
+            #     Name        = 'AV_ProjectName_VariableName'
+            #     Value       = ''
+            #     Description = 'This is an example Automation Variable.'
             # }
         )
 
@@ -125,10 +126,10 @@
 
             # For security reasons, you may also move this to the AzAutoFWProject.local.psd1 file.
             @{
-                Type           = 'SystemAssigned'  # 'SystemAssigned' or 'UserAssigned'
+                Type       = 'SystemAssigned'  # 'SystemAssigned' or 'UserAssigned'
 
                 # Azure role assignments for the Managed Identity.
-                AzureRoles     = @{
+                AzureRoles = @{
 
                     # Scope 'self' means the Automation Account itself.
                     'self' = @(
