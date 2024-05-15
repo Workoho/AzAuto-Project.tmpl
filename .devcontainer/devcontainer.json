@@ -11,7 +11,13 @@
 		"ghcr.io/flexwie/devcontainer-features/op:1": {}
 	},
 
-	"postCreateCommand": "sudo chsh vscode -s \"$(which pwsh)\"",
+	"postCreateCommand":[
+
+    // To install PowerShell modules, uncomment the following line and replace 'MyModule' with the name of the module you want to install.
+    // "pwsh -Command \"Install-Module -Name MyModule -Force -AllowClobber\"",
+
+    "sudo chsh vscode -s \"$(which pwsh)\""
+  ],
 
 	// Configure tool-specific properties.
 	"customizations": {
