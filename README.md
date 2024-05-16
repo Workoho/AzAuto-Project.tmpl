@@ -23,7 +23,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![Workoho][Workoho]][Workoho-url]
 
 
 
@@ -85,7 +85,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `email_client`, `email`, `project_title`, `project_description`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -93,14 +93,14 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+<div align="center">
+
+[![Azure Automation Framework][AzAutoFW]][AzAutoFW-url]
+[![GitHub Codespaces][GitHubCodespaces]][GitHubCodespaces-url]
+[![Visual Studio Code][VScode]][VScode-url]
+[![PowerShell][PowerShell]][PowerShell-url]
+
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -195,7 +195,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Your Name - email@email_client.com
 
 Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
 
@@ -226,22 +226,14 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [issues-url]: https://github.com/github_username/repo_name/issues
 [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
 [license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com
+[AzAutoFW]: https://img.shields.io/badge/Azure_Automation_Framework-1F4386?style=for-the-badge&logo=microsoftazure&logoColor=white
+[AzAutoFW-url]: https://github.com/workoho/AzAuto-Common-Runbook-FW
+[GitHubCodespaces]: https://img.shields.io/badge/GitHub_Codespaces-09091E?style=for-the-badge&logo=github&logoColor=white
+[GitHubCodespaces-url]: https://github.com/features/codespaces
+[VScode]: https://img.shields.io/badge/Visual_Studio_Code-2C2C32?style=for-the-badge&logo=visualstudiocode&logoColor=3063B4
+[VScode-url]: https://code.visualstudio.com/
+[PowerShell]: https://img.shields.io/badge/PowerShell-2C3C57?style=for-the-badge&logo=powershell&logoColor=white
+[PowerShell-url]: https://microsoft.com/PowerShell
+[Workoho]: https://img.shields.io/badge/Workoho.com-00B3CE?style=for-the-badge&logo=data:image/svg%2bxml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEzNDggOTEzIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zOnNlcmlmPSJodHRwOi8vd3d3LnNlcmlmLmNvbS8iIHN0eWxlPSJmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MjsiPgogICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoNC4wNzQ3OCwwLDAsMy45NjAzOCwtNzQzMS4xNSwtNDYzNC44OCkiPgogICAgICAgIDxnPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCg4LjY2MzI2ZS0xOCwwLjE0MTQ4MiwtMC4xNDE0ODIsOC42NjMyNmUtMTgsNDA1Ny43MiwtNDI5LjM1KSI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTI3MjYsMTM0NTIuN0wxMjc2Mi4zLDEzNDUyLjdMMTI5MzUuOCwxNDE2Ni40TDEyODk2LjEsMTQxNjYuNEwxMjcyNi44LDEzOTQ2LjRMMTI1NDMsMTM4OTAuM0wxMjcyNiwxMzQ1Mi43WiIvPgogICAgICAgICAgICA8L2c+CiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDAuMDg0NDk1NCwwLDAsMC4wODQ0OTU0LDE5NDEuOCwxMTA4LjU1KSI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTUxOC42MSwyOTk1LjQzTDExOTEuNDksMjk5NS40M0wxMDIyLjcsMzExMS40NkwxMDIyLjcsMzIxNS4wMUwxMjk3LjcsMzIxNS4wMUwxNTE4LjYxLDMwNjIuMDVMMTUxOC42MSwyOTk1LjQzWiIvPgogICAgICAgICAgICA8L2c+CiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDAuMDg0NDk1NCwwLDAsMC4wODQ0OTU0LDE4MTQuMDMsMTEwOC41NSkiPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTE5MTMuNDIsMjk5NS40M0wxMTkxLjQ5LDI5OTUuNDNMMTAyMi43LDMxMTEuNDZMMTAyMi43LDMyMTUuMDFMMTY5Mi41MiwzMjE1LjAxTDE5MTMuNDIsMzA2Mi4wNUwxOTEzLjQyLDI5OTUuNDNaIi8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICAgICAgPGc+CiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDAuMDg0NDk1NCwwLDAsMC4wODQ0OTU0LDE3MzEuODUsOTE3LjIxKSI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTkxMy40MiwyOTk1LjQzTDEyNTUuNzQsMjk5NS40M0wxMDg2Ljk0LDMxMTEuNDZMMTA4Ni45NCwzMjE1LjAxTDE2OTIuNTIsMzIxNS4wMUwxOTEzLjQyLDMwNjIuMDVMMTkxMy40MiwyOTk1LjQzWiIgc3R5bGU9ImZpbGw6d2hpdGU7Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC45Mzc1NTgsMCwwLDAuOTM3NTU4LC00NzYwLjU0LC00MDgzLjg4KSI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNzIwMi4xMiw1NjcxLjYzTDcyMDIuMTIsNTY4MC45TDcxNjMuNiw1NzIzLjM0TDcyNDAuODksNTgxOC43Mkw3MjQwLjg5LDU4MjcuOTlMNzIxMy40Myw1ODI3Ljk5TDcxMzkuNTMsNTczNy4wN0w3MTA0LjYxLDU3MzcuMDdMNzEwNC42MSw1ODI3Ljk5TDcwNzcuMzIsNTgyNy45OUw3MDc3LjMyLDU2MjMuOTFMNzEwNC42MSw1NjIzLjkxTDcxMDQuNjEsNTcwOS42MUw3MTM5LjUzLDU3MDkuNjFMNzE3NC42Niw1NjcxLjYzTDcyMDIuMTIsNTY3MS42M1oiIHN0eWxlPSJmaWxsOndoaXRlO2ZpbGwtcnVsZTpub256ZXJvOyIvPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K
+[Workoho-url]: https://workoho.com/
