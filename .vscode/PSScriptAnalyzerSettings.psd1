@@ -17,38 +17,64 @@
     # Use ExcludeRules when you want to run most of the default set of rules except
     # for a few rules you wish to "exclude".  Note: if a rule is in both IncludeRules
     # and ExcludeRules, the rule will be excluded.
-    #ExcludeRules = @('PSAvoidUsingWriteHost','PSMissingModuleManifestField')
+    ExcludeRules   = @('PSAvoidUsingWriteHost')
 
     CustomRulePath = @(
         # Path to the custom rule module
-        '.vscode/PSScriptAnalyzerCustomRules.ps1'
+        '.vscode/PSScriptAnalyzerCustomRules.psm1'
     )
 
     # You can use the following entry to supply parameters to rules that take parameters.
     # For instance, the PSAvoidUsingCmdletAliases rule takes a whitelist for aliases you
     # want to allow.
     Rules          = @{
-        # Do not flag 'cd' alias.
-        PSAvoidUsingCmdletAliases = @{Whitelist = @('cd') }
+        PSAvoidUsingCmdletAliases = @{
+            Enable    = $true
+            # Do not flag 'cd' alias.
+            Whitelist = @('cd')
+        }
 
-        # Check if your script uses cmdlets that are compatible with the following platforms
         PSUseCompatibleCmdlets    = @{
-            Compatibility = @(
+            Enable        = $true
+            compatibility = @(
                 'desktop-5.1.14393.206-windows'
-                'core-6.1.0-linux'
-                'core-6.1.0-macos'
                 'core-6.1.0-windows'
+                'core-6.1.0-linux'
+                'core-6.1.0-linux-arm'
+                'core-6.1.0-macos'
+            )
+        }
+
+        PSUseCompatibleCommands   = @{
+            Enable         = $true
+            TargetProfiles = @(
+                'win-48_x64_10.0.17763.0_5.1.17763.316_x64_4.0.30319.42000_framework'
+                'win-4_x64_10.0.17763.0_6.2.4_x64_3.1.2_core'
+                'ubuntu_x64_18.04_7.0.0_x64_3.1.2_core'
+            )
+            IgnoreCommands = @(
+                'Install-Module'
+                'Install-PSResource'
             )
         }
 
         PSUseCompatibleSyntax     = @{
-            # This turns the rule on (setting it to false will turn it off)
             Enable         = $true
-
-            # List the targeted versions of PowerShell here
             TargetVersions = @(
-                '5.1'   # Runbooks must work with PS 5.1
+                '5.1'
                 '7.2'
+            )
+        }
+
+        PSUseCompatibleTypes      = @{
+            Enable         = $true
+            TargetProfiles = @(
+                'win-48_x64_10.0.17763.0_5.1.17763.316_x64_4.0.30319.42000_framework'
+                'win-4_x64_10.0.17763.0_6.2.4_x64_3.1.2_core'
+                'ubuntu_x64_18.04_7.0.0_x64_3.1.2_core'
+            )
+            IgnoreTypes    = @(
+                'System.IO.Compression.ZipFile'
             )
         }
     }
